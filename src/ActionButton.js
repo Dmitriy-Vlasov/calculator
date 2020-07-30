@@ -1,14 +1,26 @@
 import React from 'react';
 import './actionButtons.css';
 
-const actions = ['÷', '×', '+', '-', '=']
+const actions = ['/', '*', '+', '-', '=']
 
-const ActionButtons = () => {
+const ActionButtons = (props) => {
+    const {onButtonClick, onEquallClick} = props;
+
     const actionButton = actions.map(action => {
             if (action != '=') {
-                return (<button className="actionButton">{action}</button>)
+                return (<button 
+                            className="actionButton"
+                            onClick = {() => onButtonClick(action)}
+                            >
+                                {action}
+                            </button>)
             } else {
-                return (<button className="equallyButton">{action}</button>)
+                return (<button 
+                            className="equallyButton"
+                            onClick = {() => onEquallClick()}
+                        >
+                            {action}
+                        </button>)
             }
     })
 

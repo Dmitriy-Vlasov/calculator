@@ -1,12 +1,14 @@
 import React from 'react';
-import './display.css'
+import './display.css';
 
 
-const Display = () => {
+const Display = (props) => {
+    const {expression, equally} = props;
+
     return (
         <div className="display">
-            <div className="expression">2 + 2 + 5</div>
-            <div className="result">= 9</div>
+            <div className="expression">{expression}</div>
+            <div className="result">= {equally}</div>
         </div>
     )
 }
