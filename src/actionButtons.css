@@ -1,0 +1,29 @@
+.actionButtons {
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;
+}
+
+.actionButton {
+    height: 50px;
+    width: 60px;
+    background-color: #EA433A;
+    font-family: Roboto;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.equallyButton {
+    height: 70px;
+    width: 70px;
+    background-color: #212121;
+    color: white;
+    font-size: 30px;
+    font-family: Roboto;
+    cursor: pointer;
+}
+
+.equallyButton:hover, .actionButton:hover {
+    border: 1px solid grey;
+}
