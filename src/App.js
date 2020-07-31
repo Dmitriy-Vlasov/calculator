@@ -7,34 +7,38 @@ import './App.css';
 
 function App() {
   let [expression, setExpression] = useState('');
-  let [equally, setEqually] = useState();
+  let [equally, setEqually] = useState(null);
 
   const onButtonClick = (value) => {
-    if (expression === '' && typeof(value) !== 'number') {
-      setExpression(expression = '')
-    } else
     if (equally !== null && value !== 'C') {
-      setEqually(equally = null)
-      setExpression(expression = '');
-      setExpression(expression += String(value));
+      if (value !== '+' && value !== '-' && value !== '/' && value !== '*') {
+        setEqually(equally = null)
+        setExpression(expression = '');
+        setExpression(expression += String(value));
+      } else {
+        setEqually(equally = null)
+        setExpression(expression = '');
+      }
     } else
-    if (value !== 'del' && value !== 'C') {
-      setExpression(expression += String(value)); 
-    } else 
-    if (value === 'del'){
-      setExpression(expression.substring(0, expression.length - 1))
-    } else 
     if (value === 'C') {
       setEqually(equally = null)
       setExpression(expression = '');
+    } else
+    if (value === '+' || value === '-' || value === '/' || value === '*') {
+      if (expression !== '') {
+        setExpression(expression += String(value));
+      }
+    } else
+    if (typeof(value) === 'number') {
+      setExpression(expression += String(value));
     }
   }
 
   const fixEqually = () => {
     const result = String(eval(expression)).includes('.') ? 
-                          eval(expression).toFixed(5) : 
+                          eval(expression).toFixed(5) + '...': 
                           eval(expression);
-    setEqually(result)
+    setEqually(result);
   }
 
   return (

@@ -8,13 +8,15 @@
     align-items: center;
     justify-content: center;
     font-family: Roboto;
+    box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.5);
 }
 
 .expression {
     width: 100%;
     text-align: left;
     font-size: 16px;
-    height: 20px;
+    min-height: 20px;
+    word-wrap: break-word;
 }
 
 .result {
@@ -22,4 +24,5 @@
     text-align: right;
     font-size: 30px;
     font-weight: 700;
+    word-wrap: break-word;
 }
