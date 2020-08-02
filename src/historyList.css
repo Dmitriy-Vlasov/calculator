@@ -1,0 +1,28 @@
+.historyList {
+    position: absolute;
+    left: -230px;
+    top: 0;
+    padding: 20px 13px;
+    background-color: white;
+    min-width: 200px;
+    max-width: 200px;
+    word-wrap: break-word;
+    box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.5);
+}
+
+.historyItem {
+    font-family: Roboto;
+    margin-bottom: 14px;
+}
+
+.clearButton {
+    color: #EA433A;
+    font-family: Roboto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.empty {
+    font-family: Roboto;
+    text-align: center;
+}

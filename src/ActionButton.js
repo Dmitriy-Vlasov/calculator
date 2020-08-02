@@ -7,9 +7,10 @@ const ActionButtons = (props) => {
     const {onButtonClick, onEquallClick} = props;
 
     const actionButton = actions.map(action => {
-            if (action != '=') {
+            if (action !== '=') {
                 return (<button 
                             className="actionButton"
+                            key={Math.random()}
                             onClick = {() => onButtonClick(action)}
                             >
                                 {action}
@@ -17,6 +18,7 @@ const ActionButtons = (props) => {
             } else {
                 return (<button 
                             className="equallyButton"
+                            key={Math.random()}
                             onClick = {() => onEquallClick()}
                         >
                             {action}
